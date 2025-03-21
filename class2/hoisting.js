@@ -31,12 +31,12 @@
 
 // // scope chain  = when a variable is not found in the current scope, it goes to the parent scope to find the variable
 var a = 10;
-let b = 20;
-{
-  var a = 30;
-  let b = 40;
-  console.log(a);
-  console.log(b);
+
+function f() {
+  console.log(window.a);
+
+  window.a = 20;
 }
-console.log(a);
-console.log(b);
+
+f();
+console.log(window.a);
