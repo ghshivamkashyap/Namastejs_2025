@@ -30,13 +30,14 @@
 // a();
 
 // // scope chain  = when a variable is not found in the current scope, it goes to the parent scope to find the variable
-var a = 10;
 
-function f() {
-  console.log(window.a);
+// // closure = when a function is able to access the variables of its parent function even after the parent function has finished executing
 
-  window.a = 20;
+function outer() {
+  var x = 10;
+  return function inner() {
+    console.log("i am inner: ", x);
+  };
 }
 
-f();
-console.log(window.a);
+outer()();
