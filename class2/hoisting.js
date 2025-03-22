@@ -52,16 +52,25 @@
 // }
 // f();
 
-
-// explanation  - 
+// explanation  -
 // 1. for loop runs and setTimeout is called 5 times
 // 2. setTimeout is an async function, so it is pushed to the callback queue
 // 3. after 5 seconds, the callback queue is executed
 // 4. i is 6 because the for loop has already finished executing
 // 5. so, i is printed 5 times
 
-for (var i = 1; i <= 5; i++) {
-  setTimeout(function () {
-    console.log(i);
-  }, i * 1000);
+// callback function - a function that is passed as an argument to another function
+// higher order function - a function that accepts another function as an argument 
+
+function a() {
+  setTimeout(() => {
+    console.log("timer");
+  }, 2000);
 }
+
+function b() {
+  console.log("b");
+}
+
+b();
+a();
