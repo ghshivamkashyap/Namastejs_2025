@@ -33,11 +33,35 @@
 
 // // closure = when a function is able to access the variables of its parent function even after the parent function has finished executing
 
-function outer() {
-  var x = 10;
-  return function inner() {
-    console.log("i am inner: ", x);
-  };
-}
+// function outer() {
+//   var x = 10;
+//   // x = 200;
+//   return function inner() {
+//     console.log("i am inner: ", x);
+//   };
+// }
 
-outer()();
+// outer()();
+
+// function f() {
+//   setTimeout(() => {
+//     console.log("i am f");
+//   }, 1000);
+
+//   console.log("i am f2");
+// }
+// f();
+
+
+// explanation  - 
+// 1. for loop runs and setTimeout is called 5 times
+// 2. setTimeout is an async function, so it is pushed to the callback queue
+// 3. after 5 seconds, the callback queue is executed
+// 4. i is 6 because the for loop has already finished executing
+// 5. so, i is printed 5 times
+
+for (var i = 1; i <= 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, i * 1000);
+}
