@@ -45,3 +45,9 @@ const fetchData1 = async () => {
 };
 
 fetchData1();
+
+const getGithubData = async () => {
+  const data = await fetch("https://api.github.com/users/ghshivamkashyap");
+  console.log("FetchRes: ",await data.json()); //5
+};
+getGithubData();
