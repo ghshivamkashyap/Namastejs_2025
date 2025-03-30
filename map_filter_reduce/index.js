@@ -19,6 +19,6 @@ console.log(
 console.log(
   arr.reduce((acc, curr) => {
     console.log(`acc: ${acc}, curr: ${curr}`);
-    return acc * curr;
-  })
+    return Math.max(acc, curr);
+  }, -1)
 );
