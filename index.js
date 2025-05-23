@@ -1,3 +1,6 @@
-var a=10;
-let b=20;
-const c=30;
+console.log("first");
+
+setTimeout(() => {
+  console.log("second");
+}, 3000);
+while (true) true;
